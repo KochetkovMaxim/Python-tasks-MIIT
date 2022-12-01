@@ -31,26 +31,3 @@ def test(func):
             print("Error in test №", test_number + 1)
     print("Required time for", NUMBER_OF_TESTS, "tests is", total_timer, "seconds")
     print("Average time for", NUMBER_OF_TESTS, "tests is", total_timer/NUMBER_OF_TESTS, "seconds")
-
-def quick_sort(array):
-    sorted_array = array.copy()
-    if len(sorted_array) <= 1:
-        return sorted_array
-    elif len(sorted_array) == 2 and sorted_array[0] > sorted_array[1]:
-        sorted_array[0], sorted_array[1] = sorted_array[1], sorted_array[0]
-        return sorted_array
-    else:
-        element = sorted_array[0]
-        left = []
-        equal = []
-        right = []
-        for i in sorted_array:
-            if i > element:
-                right.append(i)
-            elif i < element:
-                left.append(i)
-            else:
-                equal.append(i)
-
-        return quick_sort(left) + equal + quick_sort(right)
-  
